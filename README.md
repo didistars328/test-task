@@ -4,6 +4,8 @@
     / - “Hello World”; 
     /auth - “Hello World $USERNAME” with base authorisation
    
-2. Добавить ci к вышесказанному проекту (travis ci, shippable, gitlab-ci etc) с пушом Docker image в Docker Hub.
+2. Add any CI/CD tool to existing project and tune it to push the image into DockerHub
+   example: travis ci, shippable, gitlab-ci
 
-3. Написать ansible-playbook установки и настройки сервера с Docker, deploy вышесобранного Docker image. Сделать это с соблюдением “Ansible Best Practice”.
+3. Write an ansible-playbook for installing and configuring server with Docker.
+   Deploy existing Docker image (following ansible best practice)
