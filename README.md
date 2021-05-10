@@ -10,3 +10,8 @@
 
 3. Write an ansible-playbook for installing and configuring server with Docker.
    Deploy existing Docker image (following ansible best practice)
+   
+Assumptions:
+1. Implies that Ubuntu should be as a running platform for docker
+2. Password for basic auth is hardcoded for simplicity
+3. Account name and Password for Docker should be entered with *ansible-playbook -e docker_user=XXXXX -e docker_password=XXXX* parameters
