@@ -2,11 +2,8 @@
 - hosts: localhost
   name: Check all the prereq
   gather_facts: no
-  become: yes
-  become_user: root
   roles:
     - check_prereq
-  tags: allways
 
 - hosts: localhost
   name: Deploy Docker instance
