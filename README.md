@@ -14,14 +14,18 @@
 Assumptions:
 1. Implies that Ubuntu should be as a running platform for docker
 2. Password for basic auth is hardcoded for simplicity
-3. pip install docker-py was performed on Localhost to be compatible with Ansible docker module 
+3. pip install docker-py was performed on Localhost to be compatible with Ansible docker module
+4. Instead of adding additional node with CI service in this progect native GitHub Actions is used to run CI 
+
+
 ENV:
 For test there was used an Instance in Digital Ocean:
 - Ubuntu 20.04
-  1 GB / 1 CPU
+
+  1 GB / 1 CPU  
   25 GB SSD
   
-Sample output
+Sample output after ansible manifest is done:
 ```
 root@ubuntu-s-1vcpu-1gb-fra1-01:~/test-task# curl 167.172.184.145
 Hello World
