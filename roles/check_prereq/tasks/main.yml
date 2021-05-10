@@ -1,14 +1,13 @@
 ---
 - name: Uninstall Previous Docker packages Ubuntu
   apt:
-    pkg: "{{ item }}"
+    pkg:
+      - docker
+      - docker-engine
+      - docker.io
+      - containerd
+      - runc
     state: absent
-  with_items:
-    - docker
-    - docker-engine
-    - docker.io
-    - containerd
-    - runc
 
 - name: Add Docker Repository Ubuntu
   apt_repository:
