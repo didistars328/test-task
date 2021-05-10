@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 RUN \
   apt update && \
   apt install -y nginx apache2-utils && \
-  htpasswd -b -c /etc/nginx/.htpasswd admin admin123 && \ # IMPORTANT: this password should be defined in the safe place without HARDCODE
+  htpasswd -b -c /etc/nginx/.htpasswd admin admin123 && \
   echo "Hello World" > /var/www/html/index.html && \
   mkdir -p /var/www/html/auth/ && \
   echo "Hello World $(id -nu)" > /var/www/html/auth/index.html
