@@ -5,6 +5,7 @@
     build:
       path: "."
     source: build
+    pull: no
     state: present
 
 - name: Create default containers
