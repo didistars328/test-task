@@ -1,14 +1,14 @@
 ---
-- hosts: all
+- hosts: localhost
   name: Check all the prereq
   gather_facts: no
   become: yes
   become_user: root
   roles:
-    - check_prepeq
+    - check_prereq
   tags: allways
 
-- hosts: all
+- hosts: localhost
   name: Deploy Docker instance
   gather_facts: no
   roles:
