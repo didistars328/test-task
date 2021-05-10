@@ -14,3 +14,9 @@
 Assumptions:
 1. Implies that Ubuntu should be as a running platform for docker
 2. Password for basic auth is hardcoded for simplicity
+
+ENV:
+For test there was used an Instance in Digital Ocean:
+- Ubuntu 20.04
+  1 GB / 1 CPU
+  25 GB SSD
