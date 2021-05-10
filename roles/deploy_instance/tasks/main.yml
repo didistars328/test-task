@@ -1,11 +1,16 @@
 ---
+- name: Delete nginx container if presented
+  docker_container:
+    name: nginx_test
+    state: absent
+
 - name: Build container image
   docker_image:
     name: nginx_test
     build:
       path: "."
+      pull: no
     source: build
-    pull: no
     state: present
 
 - name: Create default containers
