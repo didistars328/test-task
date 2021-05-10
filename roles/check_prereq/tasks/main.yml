@@ -32,11 +32,11 @@
 
 - name: Install docker Ubuntu
   apt:
-    pkg: "{{ item }}"
+    pkg:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
     state: present
-  with_items:
-    - docker-ce
-    - docker-ce-cli
-    - containerd.io
+
 
 
