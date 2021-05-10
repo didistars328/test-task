@@ -1,18 +1,9 @@
 ---
-- name: Pull files from Git
-  git:
-    repo: "https://github.com/didistars328/test-task.git"
-    dest: /tmp/
-    clone: yes
-  register: git_res
-
-- debug: var=git_res
-
 - name: build container image
   docker_image:
     name: nginx_test
     build:
-      path: /tmp/
+      path: "."
       source: build
     state: present
 
