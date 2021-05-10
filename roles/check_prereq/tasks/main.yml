@@ -12,6 +12,8 @@
   shell: lsb_release -cs
   register: release
 
+- debug: var=release
+
 - name: Run apt upgrade
   apt:
     upgrade: "yes"
