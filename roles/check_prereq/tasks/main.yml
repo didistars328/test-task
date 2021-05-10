@@ -26,7 +26,7 @@
 
 - name: Add Docker Repository Ubuntu
   apt_repository:
-    repo: deb https://download.docker.com/linux/ubuntu {{ release }} stable
+    repo: deb https://download.docker.com/linux/ubuntu {{ release.stdout }} stable
     state: present
     update_cache: true
 
