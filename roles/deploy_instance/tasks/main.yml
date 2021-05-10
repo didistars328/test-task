@@ -18,5 +18,5 @@
     name: nginx_test
     image: nginx_test
     state: started
-    exposed_ports:
+    ports:
       - "80:80"
