@@ -1,0 +1,16 @@
+---
+- hosts: all
+  name: Check all the prereq
+  gather_facts: no
+  become: yes
+  become_user: root
+  roles:
+    - check_prepeq
+  tags: allways
+
+- hosts: all
+  name: Deploy Docker instance
+  gather_facts: no
+  roles:
+    - deploy_instance
+  tags: deploy
