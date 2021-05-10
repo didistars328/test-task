@@ -2,13 +2,15 @@
 - name: Build container image
   docker_image:
     name: nginx_test
-    path: "."
+    build:
+      path: "."
+    source: build
     state: present
 
 - name: Create default containers
   docker_container:
     name: nginx_test
     image: nginx_test
-    state: present
-    exposed_ports:
+    state: started
+    exposed_ports
       - "80:80"
