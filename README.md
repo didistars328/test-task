@@ -20,3 +20,25 @@ For test there was used an Instance in Digital Ocean:
 - Ubuntu 20.04
   1 GB / 1 CPU
   25 GB SSD
+  
+Sample output
+```
+root@ubuntu-s-1vcpu-1gb-fra1-01:~/test-task# curl 167.172.184.145
+Hello World
+root@ubuntu-s-1vcpu-1gb-fra1-01:~/test-task# curl 167.172.184.145/auth
+<html>
+<head><title>401 Authorization Required</title></head>
+<body bgcolor="white">
+<center><h1>401 Authorization Required</h1></center>
+<hr><center>nginx/1.14.0 (Ubuntu)</center>
+</body>
+</html>
+root@ubuntu-s-1vcpu-1gb-fra1-01:~/test-task# curl -u admin:admin123 167.172.184.145/auth
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body bgcolor="white">
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.14.0 (Ubuntu)</center>
+</body>
+</html>
+```
