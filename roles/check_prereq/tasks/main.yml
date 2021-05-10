@@ -8,11 +8,10 @@
       - containerd
       - runc
     state: absent
+
 - name: Detect Ubuntu release
   shell: lsb_release -cs
   register: release
-
-- debug: var=release
 
 - name: Run apt upgrade
   apt:
@@ -36,6 +35,7 @@
       - docker-ce
       - docker-ce-cli
       - containerd.io
+      - python-pip
     state: present
 
 
