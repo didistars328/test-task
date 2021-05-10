@@ -14,4 +14,9 @@
 Assumptions:
 1. Implies that Ubuntu should be as a running platform for docker
 2. Password for basic auth is hardcoded for simplicity
-3. Account name and Password for Docker should be entered with *ansible-playbook -e docker_user=XXXXX -e docker_password=XXXX* parameters
+3. pip install docker-py was performed on Localhost to be compatible with Ansible docker module 
+ENV:
+For test there was used an Instance in Digital Ocean:
+- Ubuntu 20.04
+  1 GB / 1 CPU
+  25 GB SSD
