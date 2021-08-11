@@ -10,5 +10,3 @@
   gather_facts: no
   roles:
     - deploy_instance
-    
- # This is for test task only
