@@ -1,0 +1,22 @@
+name: example-command
+on:
+  workflow_dispatch:
+    inputs:
+      comment-id:
+        description: "The comment-id of the slash command. Used to update the comment with the status."
+        required: "false"
+      dry_run:
+        description: "Dry run Helm?(to make actual Helm deployment type anything but true)"
+        required: "false"
+        default: "true"
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add reaction
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.MYSECRET }}
+          repository: ${{ github.event.client_payload.github.payload.repository.full_name }}
+          comment-id: ${{ github.event.client_payload.github.payload.comment.id }}
+          reaction-type: hooray
