@@ -16,7 +16,7 @@ jobs:
         with:
           token: ${{ secrets.MYSECRET }}
           commands: |
-            deploy-HelmChart
+            test
           static-args: |
             ref=${{ steps.getref.outputs.ref }}
             comment-id=${{ github.event.comment.id }}
