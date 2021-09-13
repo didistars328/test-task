@@ -1,7 +1,14 @@
 name: example-command
 on:
-  repository_dispatch:
-    types: [example-command]
+  workflow_dispatch:
+    inputs:
+      comment-id:
+        description: "The comment-id of the slash command. Used to update the comment with the status."
+        required: "false"
+      dry_run:
+        description: "Dry run Helm?(to make actual Helm deployment type anything but true)"
+        required: "false"
+        default: "true"
 jobs:
   example:
     runs-on: ubuntu-latest

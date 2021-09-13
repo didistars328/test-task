@@ -11,4 +11,4 @@ jobs:
         with:
           token: ${{ secrets.MYSECRET }}
           commands: example
-          repository: didistars328/test-task
+          dispatch-type: workflow
