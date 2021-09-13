@@ -1,5 +1,4 @@
 name: Deploy Helm Chart to GKE Cluster
-
 on:
   workflow_dispatch:
     inputs:
@@ -38,13 +37,6 @@ on:
         description: "WebApp Image Tag"
         required: false
         default: "*default*"
-
-env:
-  # tag_global_def: "0.29.5-alpha"
-  tag_global_def: "0.29.3-alpha"
-  tag_server_def: "66957c8"
-  tag_cloud-server_def: "163959b"
-  tag_webapp_def: "0.29.5-alpha-cloud-dev-4"
 
 jobs:
   deploy-HelmChart:
