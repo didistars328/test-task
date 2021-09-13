@@ -61,4 +61,4 @@ jobs:
 
 
       - name: Initializing Terraform Remote State
-        run: echo "ololo blabla"
+        run: echo "ololo blabla smth here"
