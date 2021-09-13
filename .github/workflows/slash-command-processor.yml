@@ -1,0 +1,64 @@
+name: Deploy Helm Chart to GKE Cluster
+
+on:
+  workflow_dispatch:
+    inputs:
+      comment-id:
+        description: "The comment-id of the slash command. Used to update the comment with the status."
+        required: "false"
+      dry_run:
+        description: "Dry run Helm?(to make actual Helm deployment type anything but true)"
+        required: true
+        default: "true"
+      env_name:
+        description: "Envoronment Name (like in repo)"
+        required: true
+        default: "infra-sb"
+      namespace:
+        description: "Kubernetes NameSpace"
+        required: true
+        default: "ab"
+      helm_release_name:
+        description: "Helm Release Name"
+        required: true
+        default: "airbyte"
+      tag_global:
+        description: "Global Image Tag"
+        required: true
+        default: "*default*"
+      tag_server:
+        description: "Server Image Tag"
+        required: false
+        default: "*default*"
+      tag_cloud-server:
+        description: "Cloud-Server Image Tag"
+        required: false
+        default: "*default*"
+      tag_webapp:
+        description: "WebApp Image Tag"
+        required: false
+        default: "*default*"
+
+env:
+  # tag_global_def: "0.29.5-alpha"
+  tag_global_def: "0.29.3-alpha"
+  tag_server_def: "66957c8"
+  tag_cloud-server_def: "163959b"
+  tag_webapp_def: "0.29.5-alpha-cloud-dev-4"
+
+jobs:
+  deploy-HelmChart:
+    name: Deploy Helm Chart to GKE Cluster
+    runs-on: ubuntu-latest
+    steps:
+      - name: Link comment to workflow run
+        if: github.event.inputs.comment-id
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          comment-id: ${{ github.event.inputs.comment-id }}
+          body: |
+            > :clock2: https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}
+
+
+      - name: Initializing Terraform Remote State
+        run: echo "ololo blabla"
