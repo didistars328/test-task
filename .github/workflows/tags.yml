@@ -11,7 +11,7 @@ jobs:
       with:
         fetch-depth: '0'
     - name: Forming tag
-      run: echo "tag=0.27.2-alpha-as213s." >> $GITHUB_ENV
+      run: echo "tag=0.28.3-alpha-as214s" >> $GITHUB_ENV
     - name: Bump version and push tag
       uses: anothrNick/github-tag-action@1.36.0
       env:
