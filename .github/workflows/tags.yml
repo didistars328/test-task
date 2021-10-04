@@ -6,15 +6,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: '0'
-    - name: Forming tag
-      run: echo "tag=0.28.3-alpha-as214s" >> $GITHUB_ENV
+
     - name: Bump version and push tag
       uses: anothrNick/github-tag-action@1.36.0
       env:
         GITHUB_TOKEN: ${{ secrets.TEST_TAG_SECRET }}
         WITH_V: true
-        CUSTOM_TAG: ${{ env.tag }}
+ #       CUSTOM_TAG: ${{ env.tag }}
