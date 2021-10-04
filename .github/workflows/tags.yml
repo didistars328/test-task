@@ -10,8 +10,11 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: '0'
+    - name: Forming tag
+      run: echo "tag=0.27.2-alpha-as213s." >> $GITHUB_ENV
     - name: Bump version and push tag
       uses: anothrNick/github-tag-action@1.36.0
       env:
         GITHUB_TOKEN: ${{ secrets.TEST_TAG_SECRET }}
         WITH_V: true
+        CUSTOM_TAG: ${{ env.tag }}
