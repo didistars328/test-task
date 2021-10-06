@@ -13,7 +13,7 @@ jobs:
         fetch-depth: '0'
         
     - name: Forming TAG
-      run: echo "::set-output name=tag_sha::$(curl -u didistars328:${{ secrets.TEST_TAG_SECRET }} https://api.github.com/repos/didistars328/test-task/git/refs/heads/master | jq -r '.object.sha' | head -c 7)"
+      run: echo "::set-output name=tag_sha::$(curl https://api.github.com/repos/didistars328/test-task/git/refs/heads/master | jq -r '.object.sha' | head -c 7)"
 
     - name: Bump version and push tag
       uses: anothrNick/github-tag-action@1.36.0
