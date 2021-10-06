@@ -13,6 +13,8 @@ jobs:
         fetch-depth: '0'
         
     - name: Forming TAG
+      if: github.event_name == 'push'
+      id: forming-tag
       run: echo "::set-output name=tag_sha::$(curl https://api.github.com/repos/didistars328/test-task/git/refs/heads/master | jq -r '.object.sha' | head -c 7)"
 
     - name: Bump version and push tag
